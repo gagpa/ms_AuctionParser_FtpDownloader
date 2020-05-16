@@ -1,0 +1,2 @@
+class LimitReachedException(Exception):
+    pass
