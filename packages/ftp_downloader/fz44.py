@@ -1,10 +1,10 @@
-from .LimitReachedException import LimitReachedException
+import calendar
+from datetime import datetime, timedelta
+
 from .IDownloader import IDownloader
+from .LimitReachedException import LimitReachedException
 from .base import Base
 from .regions import get_regions
-
-from datetime import datetime, timedelta
-import calendar
 
 
 class Fz44(IDownloader, Base):
@@ -14,8 +14,8 @@ class Fz44(IDownloader, Base):
     """
 
     _ROOT = 'fcs_regions'
-    __total: int = 0       # Общее кол-во скаченных архивов
-    limit: int = None      # Ограничение на кол-во архивов (для тестирования)
+    __total: int = 0  # Общее кол-во скаченных архивов
+    limit: int = None  # Ограничение на кол-во архивов (для тестирования)
 
     def __init__(self, conf):
         self.init_config(conf)
@@ -23,6 +23,7 @@ class Fz44(IDownloader, Base):
 
     def init_config(self, conf):
         self._HOST = conf.host
+        print(self._HOST, conf.host)
         self._USER = conf.login
         self._PASSWORD = conf.password
         self._ZIPS = conf.zips

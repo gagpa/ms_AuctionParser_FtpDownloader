@@ -1,5 +1,5 @@
-from ftplib import FTP
 from abc import ABC
+from ftplib import FTP
 from os import path, mkdir
 
 
@@ -8,16 +8,16 @@ class Base(ABC):
     Базовый класс работы с FTP.
     """
 
-    _ftp: FTP = None       # Соединение с FTP
-    _HOST = None           # URL
-    _USER = None           # Логин
-    _PASSWORD = None       # Пароль
-    _ROOT = None           # Начальная директория на FTP
-    _ZIPS = None           # Локальная директория для архивов
+    _ftp: FTP = None  # Соединение с FTP
+    _HOST = None  # URL
+    _USER = None  # Логин
+    _PASSWORD = None  # Пароль
+    _ROOT = None  # Начальная директория на FTP
+    _ZIPS = None  # Локальная директория для архивов
     _current_path = _ROOT
     _regions = []
 
-    debug: bool = False    # Debug-режим
+    debug: bool = False  # Debug-режим
 
     def __init__(self):
         self._connect(self._HOST, self._USER, self._PASSWORD)

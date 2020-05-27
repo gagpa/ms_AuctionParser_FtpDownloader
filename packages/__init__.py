@@ -1,1 +1,1 @@
-from .ftp_downloader import Fz44
+from packages.package_dealer import PackageDealer
