@@ -12,10 +12,9 @@ from . import api
 def download(start, days, ftpd_name, config_name, api_name):
     config = ConfigDealer.get_package(config_name)
     api_link = ConfigDealer.get_api_link(api_name)
-    print(config.host, os.environ.get('FTP_HOST'))
     ftpd = PackageDealer.get_downloader(ftpd_name)(config)
     status, count = ftpd.download(start, days)
-    requests.get(api_link, {'local_link': config.zips,
+    requests.get(api_link, {'local_path': config.zips,
                             'status': status,
                             'count': count})
 
