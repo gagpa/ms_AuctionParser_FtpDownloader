@@ -1,14 +1,15 @@
-from packages.ftp_downloader import Fz44
+from packages.ftp_downloader import downloaders
 
 
 class PackageDealer:
-    __ftpd = {'ftpd44': Fz44}
+
+    __downloaders = downloaders
 
     @classmethod
     def get_downloader(cls, ftpd_name):
         try:
-            parser = cls.__ftpd[ftpd_name]
+            parser = cls.__downloaders[ftpd_name]
             return parser
         except KeyError:
-            print(f'Ваш ключ: {ftpd_name} не подходит. Возможные ключи: {cls.__ftpd.keys()}')
+            print(f'Ваш ключ: {ftpd_name} не подходит. Возможные ключи: {cls.__downloaders.keys()}')
             raise KeyError

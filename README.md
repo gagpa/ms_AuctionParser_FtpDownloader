@@ -21,9 +21,9 @@
 6. Создать связть uWSGI и NGINX через файл ftpd.sock
 
 # Настройка Configs(.env) - файл переменных виртуального окружения
+* APP_MODE - режим в котором включить приложение
 * FTP_HOST - ссылка на удаленный Ftp
 * FTP_LOGIN - логин от FTP
 * FTP_PASSWORD - пароль от FTP
 * FTP_ZIPS - директория загрузки
-* APP_MODE - режим в котором включить приложение
 * API_AUTOFILLER - ссылка на API autofiller

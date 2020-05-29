@@ -1,10 +1,10 @@
 from configs.app_configs import main_configs, api_links
-from configs.package_configs import ConfigFtp44
+from configs.package_configs import packages
 
 
 class ConfigDealer:
     __main = main_configs
-    __package = {'ftpd44': ConfigFtp44}
+    __packages = packages
     __api_links = api_links
 
     @classmethod
@@ -19,10 +19,10 @@ class ConfigDealer:
     @classmethod
     def get_package(cls, package_name):
         try:
-            config = cls.__package[package_name]
+            config = cls.__packages[package_name]
             return config()
         except KeyError:
-            print(f'Ваш ключ: {package_name} не подходит. Возможные ключи: {cls.__package.keys()}')
+            print(f'Ваш ключ: {package_name} не подходит. Возможные ключи: {cls.__packages.keys()}')
             raise KeyError
 
     @classmethod
