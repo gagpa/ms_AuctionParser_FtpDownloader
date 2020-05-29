@@ -12,6 +12,11 @@
 * setup.py - файл установки. Временно не работает
 * .env - файл с переменными окружения, необходимые для работы сериса
 
+# Предустановки
+1. sudo apt update
+2. sudo apt install nginx python3
+3. sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-d$
+
 # Установка
 1. Скачать с репозитория
 2. Созздать venv и установить в него требуемые пакеты из requirements.txt
